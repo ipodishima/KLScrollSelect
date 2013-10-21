@@ -49,6 +49,12 @@
 -(BOOL) animating;
 @end
 @implementation KLScrollSelect
+
+- (void)reloadData
+{
+    [self populateColumns];
+}
+
 -(BOOL) animating {
     return  (BOOL)self.animationTimer;
 }
@@ -71,6 +77,12 @@
     [self synchronizeContentOffsetsWithDriver: self.driver];
 }
 -(void) populateColumns {
+    
+    for (KLScrollingColumn *column in self.columns)
+    {
+        [column removeFromSuperview];
+    }
+    
     NSInteger numberOfColumns = [self numberOfColumnsInScrollSelect:self];
     NSMutableArray* columns = [[NSMutableArray alloc] initWithCapacity:numberOfColumns];
     CGFloat columnWidth = self.frame.size.width/[self numberOfColumnsInScrollSelect:self];

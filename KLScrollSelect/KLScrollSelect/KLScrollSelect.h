@@ -43,6 +43,8 @@
 - (NSInteger)scrollSelect:(KLScrollSelect *)scrollSelect numberOfSectionsInColumnAtIndex:(NSInteger)index;
 - (CGFloat) scrollSelect: (KLScrollSelect*) scrollSelect heightForColumnAtIndex: (NSInteger) index;
 
+- (void) reloadData;
+
 //Actions
 - (UITableViewCell*) cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (NSInteger)numberOfColumnsInScrollSelect:(KLScrollSelect *)scrollSelect;
